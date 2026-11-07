@@ -64,7 +64,7 @@ final class ScopeChecker
             $prefix = substr($pPath, 0, -1);
             return str_starts_with($path, $prefix);
         }
-        return $path === $pPath
+        return $path === $pPath;
     }
 
     private static function hostMatches(string $host, string $patternHost): bool
