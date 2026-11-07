@@ -49,6 +49,6 @@ final class Tokenizer
 
     public static function findingText(string $title, string $description) : string
     {
-        return $title . ' ' . $description
+        return $title . ' ' . $description;
     }
 }
