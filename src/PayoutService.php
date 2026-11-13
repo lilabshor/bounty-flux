@@ -35,4 +35,11 @@ final class PayoutService
         (new FindingService($this->store))->transition($findingId, 'dibayar');
         return $id;
     }
+
+    public  static function formatMoney(int $cents, string $currency = Config::CURRENCY): string
+    {
+        $sign = $cents < 0 ? '-' : '';
+        $abs = abs($cents);
+        return sprintf('%s%s %d.%02d', $sign, $currency, intdiv($abs, 100), $abs % 100);
+    }
 }
